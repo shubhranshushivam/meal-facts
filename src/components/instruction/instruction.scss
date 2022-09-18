@@ -1,0 +1,113 @@
+.instruction {
+  background-image: url(../../../public/assets/instructionBg.jpg);
+  overflow-y: hidden;
+  background-size: 130% 135%;
+  background-position: center center;
+  animation: shrink 5s  infinite alternate-reverse;
+
+  @keyframes shrink {
+    0% {
+      background-size: 110% 110%;
+    }
+    100% {
+      background-size: 100% 100%;
+    }
+  }
+
+  color: white;
+  h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 35px;
+    font-family: "Comfortaa", cursive;
+  }
+  
+  .container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
+    .right {
+        
+        width: 70%;
+        background-color: rgba(0, 0, 0, 0.464);
+        padding: 40px;
+        border-radius: 20px;
+        margin-right: 20px;
+        animation: info 2s;
+
+        .intro{
+            font-size: 20px;
+
+            .wrapper{
+                font-family: cursive;
+            }
+        }
+
+        .steps{
+            justify-content: center;
+            margin-top: 70px;
+            font-size: 15px;
+            h2{
+                display: flex;
+                justify-content: center;
+                font-family: cursive;
+                font-size: 30px;
+            }
+            .wrapper{
+                display: flex;
+                justify-content: center;
+                .item{
+                    width: 300px;
+                    height: 150px;
+                    border-radius: 20px;
+                    border: 1px solid rgb(240, 239, 239);
+                    display: flex;
+                    margin: 10px 10px;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    position: relative;
+                    transition: all 0.5s ease;
+                    cursor: pointer;
+        
+                    h3{
+                        position: absolute;
+                        font-size: 15px;
+                        padding: 10px;
+                    }
+        
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        z-index: 1;
+                    }
+        
+                    &:hover{
+                        img{
+                            opacity: 0.3;
+                            z-index: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        @keyframes info {
+            from{
+                opacity: 0.3;
+                margin-right: 0px;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+
+        
+    }
+  }
+
+
+}

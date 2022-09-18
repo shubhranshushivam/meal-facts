@@ -1,0 +1,140 @@
+@import "../../global.scss";
+
+.home {
+  overflow-y: hidden;
+  .overlay{
+    height: 100%;
+    overflow-y: hidden;
+    opacity: 0.6;
+
+    video{
+      height: 110%;
+      transform: translate(-10px, -10px);
+      width: 110%;
+      float: left;
+      object-fit: cover;
+      filter: blur(4px);
+      z-index: 0;
+      
+    }
+    
+  }
+
+  
+  .content {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    // z-index: 1;
+    font-family: 'Comfortaa', cursive;
+    cursor: default;
+    
+    animation: title ;
+    animation-duration: 2s;
+
+
+    h1{
+      font-size: 3.5rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      font-family: inherit;
+
+      span{
+        font-family: 'Comfortaa', cursive;
+        color: $mainColor;
+        margin-left: 7px;
+      }
+    }
+
+
+    h2{
+      font-family: 'Comfortaa', cursive;
+      font-size: 2.2rem;
+      color: $mainColor;
+    }
+
+    h3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.5rem;
+    }
+    .icon{      
+      margin-left: 5px;
+      font-size: 40px;
+      color: $mainColor;
+    }
+  }
+  a{
+    position: absolute;
+    bottom: 9px;
+    color: wheat;
+    right: 48%;
+    
+    .downIcon{
+        animation: arrowBlink 1.5s infinite;
+        font-size: 50px;
+    }
+
+    @keyframes arrowBlink{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+}
+
+  @keyframes title {
+    from{
+      opacity: 0;
+      margin-top: 30px;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+
+  .right{
+
+  }
+}
+
+// @media screen and (min-width: 400px) {
+//     .home{
+
+//       .content{
+
+//         h1{
+
+//           font-size: 10px;
+//         }
+//       }
+//     }
+// }
+
+// @media screen and (min-width: 800px){
+//   .home{
+
+//     .content{
+
+//       h1{
+
+//         font-size: 10px;
+//       }
+//     }
+//   }
+// }

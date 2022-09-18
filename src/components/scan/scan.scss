@@ -1,0 +1,85 @@
+@import "../../global.scss";
+
+.scan {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../../../public/assets/bg.jpg");
+  background-size: cover;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 900px;
+    height: 800px;
+    align-items: center;
+    margin-bottom: 60px;
+
+    .midComponent {
+        display: flex;
+        margin-top: 30px;
+        background-color: rgba(0, 0, 0, 0.822);
+        width: 65%;
+        height: 50%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 35px;
+        opacity: 0.9;
+
+        .button{
+        display: flex;
+        width: 250px;
+        justify-content: center;
+        align-items: center;
+        
+
+        ::-webkit-file-upload-button {
+            display: flex;
+            justify-content: center;
+            width: 175px;
+            background: rgb(255, 255, 255);
+            color: $buttonColor;
+            font-weight: 500;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 2px solid $mainColor;
+            padding: 1em;
+            cursor: pointer;
+          }
+          input[type='file']{
+            font-size: 15px;
+            color: white;
+            opacity: 1;
+          }
+
+          button{
+            cursor: pointer;
+            margin-bottom: 18px;
+            margin-left: 5px;
+            width: 80px;
+            height: 68px;
+            border-radius: 15%;
+            border: 2px solid $mainColor;
+          .icon{
+            
+            font-size: 40px;
+            color: $mainColor;
+          }
+        }
+      }
+    }
+
+    // ::-webkit-file-upload-button {
+    //     background: $mainColor;
+    //     color: whitesmoke;
+    //     font-size: 20px;
+    //     border-radius: 10px;
+    //     border: 2px solid $mainColor;
+    //     padding: 1em;
+    //   }
+    // input[type="file"] {
+    //     // display: none;
+    // }
+  }
+}
