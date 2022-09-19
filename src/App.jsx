@@ -24,11 +24,9 @@ function App() {
 
       <div className="sections">
         <Home />
-        
-        ({resultOpen && <Result />})
-        {scanOpen && <Scan toggleViewFn={toggleViews} />}
-        {scanOpen && <Scan />}
-        {resultOpen && <Result toggleViewFn={toggleViews} />}
+
+        {(resultOpen===false) && <Scan toggleViewFn={toggleViews}/>}
+        {(scanOpen===false) && <Result toggleViewFn={toggleViews}/>}
 
         <Instruction />
         <About />

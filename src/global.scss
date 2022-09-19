@@ -1,3 +1,11 @@
 $mainColor: rgb(238, 183, 82);
 
 $buttonColor: rgb(213, 146, 22);
+
+$width: 768px;
+
+@mixin mobile {
+    @media (max-width: #{$width}){
+        @content
+    }
+}

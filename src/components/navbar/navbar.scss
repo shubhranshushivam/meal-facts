@@ -17,6 +17,9 @@
             font-weight: 700;
             font-family: 'Qwitcher Grypen';
             cursor: pointer;
+            @include mobile{
+                font-size: 55px;
+            }
             a{
                 display: flex;
                 text-decoration: none;
@@ -28,6 +31,10 @@
                 margin-right: 15px;
                 width: 100px;
                 align-items: center;
+
+                @include mobile{
+                    width: 80px;
+                }
                 
             }
             

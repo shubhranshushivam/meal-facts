@@ -2,6 +2,11 @@
 
 .home {
   overflow-y: hidden;
+  @include mobile{
+    flex-direction: column;
+    align-items: center;
+  }
+ 
   .overlay{
     height: 100%;
     overflow-y: hidden;
@@ -22,6 +27,7 @@
 
   
   .content {
+    
     opacity: 1;
     position: absolute;
     width: 100%;
@@ -32,9 +38,13 @@
     justify-content: center;
     align-items: center;
     color: white;
-    // z-index: 1;
     font-family: 'Comfortaa', cursive;
     cursor: default;
+
+    @include mobile{
+      padding-left: 0;
+      align-items: center;
+    }
     
     animation: title ;
     animation-duration: 2s;
@@ -47,10 +57,17 @@
       align-items: center;
       font-family: inherit;
 
+      @include mobile{
+        font-size: 28px;
+      }
+
       span{
         font-family: 'Comfortaa', cursive;
         color: $mainColor;
         margin-left: 7px;
+        @include mobile{
+          font-size: 28px;
+        }
       }
     }
 
@@ -59,6 +76,9 @@
       font-family: 'Comfortaa', cursive;
       font-size: 2.2rem;
       color: $mainColor;
+      @include mobile{
+        font-size: 25px;
+      }
     }
 
     h3{
@@ -67,11 +87,20 @@
       align-items: center;
       font-family: 'Patrick Hand', cursive;
       font-size: 1.5rem;
+
+      @include mobile{
+        font-size:20px;
+        font-weight: 100;
+      }
     }
     .icon{      
       margin-left: 5px;
       font-size: 40px;
       color: $mainColor;
+
+      @include mobile{
+        font-size:30px;
+      }
     }
   }
   a{
@@ -112,29 +141,3 @@
 
   }
 }
-
-// @media screen and (min-width: 400px) {
-//     .home{
-
-//       .content{
-
-//         h1{
-
-//           font-size: 10px;
-//         }
-//       }
-//     }
-// }
-
-// @media screen and (min-width: 800px){
-//   .home{
-
-//     .content{
-
-//       h1{
-
-//         font-size: 10px;
-//       }
-//     }
-//   }
-// }

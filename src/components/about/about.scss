@@ -7,6 +7,9 @@
   flex-direction: column;
   align-items: center;
 
+  
+
+
   h1 {
     font-size: 35px;
     font-family: "Comfortaa", cursive;
@@ -21,6 +24,11 @@
     width: 90%;
     margin-top: 50px;
 
+    @include mobile{
+      display: block;
+      margin-bottom: 10px;
+    }
+
     .item {
       display: flex;
       justify-content: center;
@@ -33,12 +41,22 @@
       flex-wrap: wrap;
       cursor: default;
       box-shadow: 0px 8px 5px rgba(0, 159, 245, 0.997);
+      @include mobile{
+        width:86%;
+        margin-bottom: 50px;
+      }
+
+      
 
       img {
         background-color: rgba(255, 255, 255, 0.697);
         width: 250px;
         border-radius: 50% 50%;
         justify-content: left;
+
+        @include mobile{
+          width: 130px;
+        }
       }
       .text {
         font-family: "Baloo Paaji 2", cursive;
@@ -73,6 +91,8 @@
             margin: 8px;
           }
         }
+
+        
       }
       &:hover {
         background-color: rgba(0, 0, 0, 0.6);

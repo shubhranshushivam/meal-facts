@@ -15,6 +15,10 @@
     height: 800px;
     align-items: center;
     margin-bottom: 60px;
+    @include mobile{
+      width: 550px;
+      height: 600px;
+    }
 
     .midComponent {
       display: flex;
@@ -27,7 +31,17 @@
       border-radius: 35px;
       opacity: 0.9;
 
+      @include mobile{
+        align-items: flex-start;
+        
+      }
+
       .left {
+        @include mobile{
+          flex-direction: column;
+          align-items: center;
+          
+        }
           .btn {
             display: flex;
             align-items: center;
@@ -38,6 +52,10 @@
             width: 85px;
             border-radius: 5px;
             margin-bottom: 10px;
+            @include mobile{
+              width: 120px;
+              margin-top: 30px;
+            }
             ArrowBackIcon {
               font-size: 25px;
             }
@@ -54,6 +72,11 @@
           height: 180px;
           object-fit: cover;
           border-radius: 10px;
+
+          @include mobile{
+            width: 120px;
+            height: 100px;
+          }
         }
       }
 
@@ -62,19 +85,38 @@
         padding-top: 20px;
         padding: 10px 10px 10px 10px;
 
+        @include mobile{
+          width: 200px;
+          margin-top: 20px;
+        }
+
         .heading {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           justify-content: space-between;
           margin-bottom: 10px;
 
-          h2,
+
+          h2{
+            font-family: 'comfortaa';
+            @include mobile{
+              font-size: 17px;
+            }
+          }
           h3 {
             font-family: "comfortaa";
+
+            @include mobile{
+              font-size: 12px;
+            }
           }
         }
         .recipe {
           font-size: 13px;
+
+          @include mobile{
+            font-size: 11px;
+          }
         }
       }
     }

@@ -1,9 +1,23 @@
+@import '../../global.scss';
+
 .instruction {
   background-image: url(../../../public/assets/instructionBg.jpg);
   overflow-y: hidden;
   background-size: 130% 135%;
   background-position: center center;
   animation: shrink 5s  infinite alternate-reverse;
+
+  @include mobile{
+    background-size: 100% 100%;
+    overflow-y: scroll;
+  }
+
+  ::-webkit-scrollbar{
+
+    @include mobile{
+        display: none;
+      }
+  }
 
   @keyframes shrink {
     0% {
@@ -21,6 +35,10 @@
     margin-top: 20px;
     font-size: 35px;
     font-family: "Comfortaa", cursive;
+    @include mobile{
+        font-size: 27px;
+    }
+    
   }
   
   .container{
@@ -36,9 +54,18 @@
         border-radius: 20px;
         margin-right: 20px;
         animation: info 2s;
+        @include mobile{
+            width: 80%;
+        }
+        
 
         .intro{
             font-size: 20px;
+
+            @include mobile{
+                font-size: 15px;
+            }
+            
 
             .wrapper{
                 font-family: cursive;
@@ -54,10 +81,29 @@
                 justify-content: center;
                 font-family: cursive;
                 font-size: 30px;
+
+                @include mobile{
+                    font-size: 25px;
+                }
+                
             }
             .wrapper{
                 display: flex;
                 justify-content: center;
+
+                @include mobile{
+                    flex-direction: column;
+                    align-items: center;
+                    overflow-y: scroll;
+
+                    ::-webkit-scrollbar{
+
+                        @include mobile{
+                            display: none;
+                          }
+                      }
+                  }
+                
                 .item{
                     width: 300px;
                     height: 150px;
@@ -71,6 +117,12 @@
                     position: relative;
                     transition: all 0.5s ease;
                     cursor: pointer;
+
+                    @include mobile{
+                        width: 180px;
+                        height: 180px;
+                    }
+                    
         
                     h3{
                         position: absolute;
