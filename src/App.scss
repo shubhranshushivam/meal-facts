@@ -9,6 +9,11 @@
         background-color: black;
         position: relative;
         top: 80px;
+
+        @include mobile{
+          height: calc(100vh - 60px);
+          top: 60px;
+        }
         // overflow-y: hidden;
         scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
@@ -21,6 +26,9 @@
           width: 100%;
           height: calc(100vh - 80px);
           scroll-snap-align: start;
+          @include mobile{
+            height: calc(100vh - 60px);
+          }
       }
   }
 }

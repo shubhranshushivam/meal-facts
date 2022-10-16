@@ -2,6 +2,10 @@ import React from "react";
 import "./home.scss";
 import Typewriter from 'typewriter-effect';
 import videoBg from './video1.mp4';
+import videoBg1 from './video1.webm';
+import videoBg2 from './video1.ogg';
+import posterImg from './pos.jpg'
+import vidGif from './vidGif1.gif';
 import CameraIcon from '@mui/icons-material/Camera';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -17,7 +21,11 @@ export default function Home() {
   return (
     <div className="home" id="home">
       <div className="overlay">
-      <video src={videoBg} autoPlay loop muted poster="./pos.png"></video>
+      <video autoPlay loop playsinline muted poster={vidGif}>
+        <source src={videoBg} type="video/mp4"/>
+        <source src={videoBg1} type="video/webm"/>
+        <source src={videoBg2} type="video/ogg"/>
+      </video>
       </div>
       <div className="text">
       <div className="content">
