@@ -3,6 +3,7 @@ import "./App.scss";
 import About from "./components/about/About";
 import Home from "./components/home/Home";
 import Instruction from "./components/instruction/Instruction";
+import Loading from "./components/loading/Loading";
 import Menu from "./components/menu/Menu";
 import Navbar from "./components/navbar/Navbar";
 import Result from "./components/result/Result";
@@ -27,7 +28,7 @@ function App() {
 
         {(resultOpen===false) && <Scan toggleViewFn={toggleViews}/>}
         {(scanOpen===false) && <Result toggleViewFn={toggleViews}/>}
-
+        
         <Instruction />
         <About />
       </div>

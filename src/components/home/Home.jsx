@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="home" id="home">
       <div className="overlay">
-      <video autoPlay loop playsinline muted poster={vidGif}>
+      <video autoPlay loop playsInline muted poster={vidGif}>
         <source src={videoBg} type="video/mp4"/>
         <source src={videoBg1} type="video/webm"/>
         <source src={videoBg2} type="video/ogg"/>

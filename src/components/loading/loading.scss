@@ -1,0 +1,52 @@
+@import "../../global.scss";
+
+.result {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../../../public/assets/bg.jpg");
+  background-size: cover;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 900px;
+    height: 800px;
+    align-items: center;
+    margin-bottom: 60px;
+    @include mobile{
+      width: 550px;
+      height: 600px;
+    }
+
+    .midComponent {
+      display: flex;
+      margin-top: 30px;
+      background-color: rgba(238, 183, 82, 0.922);
+      width: 65%;
+      height: 50%;
+      align-items: center;
+      justify-content: center;
+      border-radius: 35px;
+      opacity: 0.9;
+
+      @include mobile{
+        align-items: flex-start;
+        
+      }
+          ReactLoading{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            font-size: 20px;
+            height: 100px;
+            width: 100px;
+          }
+
+          @include mobile{
+            font-size: 11px;
+          }
+    }
+  }
+}

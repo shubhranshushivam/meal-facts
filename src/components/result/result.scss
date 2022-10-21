@@ -100,19 +100,35 @@
           h2{
             font-family: 'comfortaa';
             @include mobile{
-              font-size: 17px;
+              font-size: 15px;
             }
           }
           h3 {
             font-family: "comfortaa";
 
             @include mobile{
-              font-size: 12px;
+              font-size: 10px;
             }
           }
         }
         .recipe {
+          overflow-y: scroll;
+          scrollbar-width: none;
+          height: 170px;
           font-size: 13px;
+          
+          .recipe::-webkit-scrollbar{
+            width: 0!important;
+          }
+          
+
+          ReactLoading{
+            overflow-y: hidden;
+
+            ::-webkit-scrollbar {
+              display: none;
+          }
+          }
 
           @include mobile{
             font-size: 11px;
