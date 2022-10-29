@@ -1,7 +1,10 @@
 import React from "react";
 import "./navbar.scss";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-export default function Navbar({ menuOpen, setMenuOpen }) {
+export default function Navbar({ menuOpen, setMenuOpen, loginOpen, setLoginOpen }) {
+
+  
   return (
     <div className={"Navbar " + (menuOpen && "active")}>
       <div className="wrapper">
@@ -15,6 +18,19 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
         <div className="center"></div>
 
         <div className="right">
+          
+          <div className="dropdown">
+
+            <button className="dropbtn" onClick={()=>setLoginOpen(!loginOpen)}>
+              <AccountCircleIcon className="icon"/>
+            </button> 
+
+            
+            
+            
+          </div>
+          
+          
           <div
             className="hamburger"
             onClick={() => {

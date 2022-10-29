@@ -3,7 +3,8 @@ import axios from "axios";
 import "./scan.scss";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
-export default function Scan({ toggleViewFn }) {
+
+export default function Scan({ toggleViewFn, user}) {
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
 
@@ -12,7 +13,14 @@ export default function Scan({ toggleViewFn }) {
     setFile(e.target.files[0]);
     setFileName(e.target.files[0].name);
   };
-
+  
+  var statusUser=false;
+  if(Object.keys(user).length!=0){
+    statusUser=true;
+  }
+  else{
+    statusUser=false;
+  }
 
   // console.log(file);
   // console.log(fileName);
@@ -20,6 +28,10 @@ export default function Scan({ toggleViewFn }) {
   var url="http://localhost:5000/data";
 
   function uploadFile() {
+    if(!statusUser){
+      alert("Please login First");
+      return;
+    }
     var queryObj=`{"fileName": "${fileName}"}`;
     var jsonObj = JSON.parse(queryObj)
     console.log(jsonObj)
@@ -40,56 +52,6 @@ export default function Scan({ toggleViewFn }) {
     );
 }
 
-  // const uploadFile = async (e) => {
-  //   // var formData = new FormData();
-  //   // formData.append("fileName", fileName);
-  //   // formData.append("from", "frontend");
-  //   // console.log(formData);
-  //   console.log({"fileName":fileName})
-  //   return postImage(`/data`, {fileName:fileName}).then((res)=>res);
-
-    // try {
-    //   const res = await fetch("http://localhost:5000/data", {
-    //     method:"POST",
-    //     headers:{
-    //       'Content-Type':'application/json',
-    //     },
-    //     body: JSON.stringify(fileName)
-    //   }).then((response)=>{
-    //     console.log(response)
-    //   }).catch(err=> console.log(err));
-    //   console.log(res);
-    // } catch (ex) {
-    //   console.log(ex);
-    // }
-    
-    
-  // };
-
-  // let postImage = (endpoint, formData)=>{
-  //   console.log(formData)
-  //   const customHeaders = {
-  //     headers:{
-  //       "Content-Type":"application/json",
-  //     },
-  //   };
-
-  //   let url = `http://localhost:5000${endpoint}`;
-  //   return axios.post(url, formData, customHeaders).then((res)=>({
-  //     status: res.status,
-  //     data: res.data,
-  //     error: null,
-      
-  //   }))
-  //   .catch((err)=>{
-  //     return {
-  //       status: err.response ? err.response.status:0,
-  //       data: {},
-  //       error: err.message,
-  //     };
-  //   });
-  //   toggleViewFn();
-  // };
 
   return (
     <div className="scan" id="scan">
