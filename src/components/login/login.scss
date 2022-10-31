@@ -14,14 +14,16 @@
     font-family: 'Comfortaa', cursive;
     align-items: center;
     justify-content: center;
-    transition: all .5s ease;
+    transition: all 1s ease-in-out;
     opacity: 0.97;
     border-radius: 0px 0px 10px 10px;
     background-color: rgb(68, 68, 80);
+    animation-name: topdown;
+    animation-duration: 0.7s;
 
     @include mobile{
         top: 60px;
-        width: 40%;
+        width: 100%;
     }
 
     
@@ -65,5 +67,14 @@
             border-radius: 10px;
             cursor: pointer;
         }
+    }
+}
+
+@keyframes topdown {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 300px;
     }
 }

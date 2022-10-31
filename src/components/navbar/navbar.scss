@@ -4,6 +4,7 @@
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 3;
     background-color:#313131;
     .wrapper{
         padding: 10px 30px;
@@ -62,15 +63,17 @@
                         cursor: pointer;
                         :hover{
                             color: white;
+                            @include mobile{
+                               color: $mainColor;
+                            }
+                        }
+
+                        @include mobile{
+                            margin-right: 13px;
                         }
                     }
                 }
 
-                .dropdown-content{
-                    display: block;
-                }
-                
-                  
                 
             }
             
